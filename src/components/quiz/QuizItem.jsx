@@ -1,8 +1,6 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
 import Choice from "./Choice";
-import { nanoid } from "nanoid";
 import Question from "./Question";
+
 function QuizItem({ question, choices, onClick, setQuizItem, isDone }) {
   return (
     <div className="flex flex-col justify-center items-center p-6 shadow-md rounded-lg mb-10 w-[20rem] md:w-[40rem] lg:w-[50rem]">

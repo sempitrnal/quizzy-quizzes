@@ -21,9 +21,7 @@ function Quiz({ quizDetails, back }) {
   const [quizResults, setQuizResults] = useState({
     score: 0,
   });
-  useEffect(() => {
-    getQuiz();
-  }, []);
+
   const getQuiz = async () => {
     const res = await fetch(
       `https://opentdb.com/api.php?amount=${quizDetails.numOfQuestions}${
@@ -34,14 +32,16 @@ function Quiz({ quizDetails, back }) {
     );
     const data = await res.json();
     setQuiz(data.results);
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 1200);
+
+    setIsLoading(false);
   };
+  useEffect(() => {
+    getQuiz();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   useEffect(() => {
     if (!isLoading) {
       const done = quizItem.every((e) => e.isDone);
-
       if (done) {
         setIsDone(true);
         setOpenResults(true);
@@ -51,7 +51,8 @@ function Quiz({ quizDetails, back }) {
         setIsDone(false);
       }
     }
-  }, [isLoading, quizItem]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [quizItem]);
 
   function shuffle(array) {
     let currentIndex = array.length,
@@ -185,11 +186,11 @@ function Quiz({ quizDetails, back }) {
   };
   return (
     <motion.div exit={{ opacity: 0 }} className="min-w-full min-h-full">
-      <div className="absolute">
+      <motion.div className="absolute">
         <AnimatePresence>
           {isLoading && <Loader variants={fadeIn} />}
         </AnimatePresence>
-      </div>
+      </motion.div>
       {!isLoading && (
         <motion.div
           initial={{ opacity: 0 }}

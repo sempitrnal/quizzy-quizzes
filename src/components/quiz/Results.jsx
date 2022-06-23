@@ -10,6 +10,10 @@ function Results({ handleClick, results, quizLength, newQuiz }) {
   const great =
     results.score >= Math.floor(quizLength / 3) &&
     results.score <= Math.floor(quizLength / 2);
+  const noice =
+    results.score >= Math.floor(quizLength / 1.5) &&
+    results.score <= Math.floor(quizLength / 1.05);
+  const excelente = results.score === quizLength;
   const dropIn = {
     hidden: {
       y: "-10vh",
@@ -56,13 +60,15 @@ function Results({ handleClick, results, quizLength, newQuiz }) {
           )}
         </AnimatePresence>
         <h1 className="text-4xl font-[Inter] font-semibold text-[#293264] m-5">
-          {results.score >= 3 && results.score <= 5
+          {good
+            ? "Good!"
+            : great
             ? "Great!"
-            : results.score > 5 && results.score <= 8
-            ? "Well done!"
-            : results.score === quizLength
-            ? "Excellent!"
-            : "Shahaahaha!"}
+            : noice
+            ? "Noicee!"
+            : excelente
+            ? "Excelente!! congrats brah"
+            : "hahhahhhhaahhhaha!"}
         </h1>
         <hr />
         <div className="h-full flex flex-col justify-center items-center">

@@ -54,7 +54,7 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
               id="category"
               value={quizDetails.category}
               onChange={handleChange}
-              className="bg-white rounded-md w-[10rem] h-[2rem] border border-[#293264]  transition-all duration-300"
+              className="px-3 bg-white rounded-md w-[10rem] h-[2rem] border border-[#293264]  transition-all duration-300"
             >
               <option value={""}>Any category</option>
               <option value={17}>Science & Nature</option>
@@ -70,7 +70,7 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
               id="difficulty"
               value={quizDetails.difficulty}
               onChange={handleChange}
-              className="bg-white rounded-md w-[10rem] h-[2rem] border border-[#293264]  transition-all duration-300"
+              className="px-3 bg-white rounded-md w-[10rem] h-[2rem] border border-[#293264]  transition-all duration-300"
             >
               <option value="">Any difficulty</option>
               <option value="easy">Easy</option>
@@ -83,6 +83,8 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
               Number of questions
             </label>
             <input
+              min={8}
+              max={50}
               type="number"
               name="numOfQuestions"
               value={quizDetails.numOfQuestions}
@@ -110,7 +112,7 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
               className=""
             />
           </div>
-          <div className="w-14 aspect-square">
+          <div className="w-12 aspect-square">
             <img src={react} alt="" onClick={RedirectPage} className="" />
           </div>
           <img
