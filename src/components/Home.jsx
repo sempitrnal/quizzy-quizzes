@@ -105,7 +105,7 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
               Number of questions
             </label>
             <input
-              min={8}
+              min={1}
               max={50}
               type="number"
               name="numOfQuestions"
