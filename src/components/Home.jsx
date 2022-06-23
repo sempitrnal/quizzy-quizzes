@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import OpenTDB from "../assets/logo.png";
+import react from "../assets/react.png";
+import tw from "../assets/tailwind.png";
 
 function Home({ startQuiz, quizDetails, setQuizDetails }) {
   const RedirectPage = () => {
@@ -98,7 +100,26 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
       <div className="text-center ">
         <p className="text-[#aeaeae] mb-4">Powered by</p>
 
-        <img src={OpenTDB} alt="" width={100} onClick={RedirectPage} />
+        <div className="flex items-center gap-6 justify-center">
+          <div className="">
+            <img
+              src={OpenTDB}
+              alt=""
+              onClick={RedirectPage}
+              width={100}
+              className=""
+            />
+          </div>
+          <div className="w-14 aspect-square">
+            <img src={react} alt="" onClick={RedirectPage} className="" />
+          </div>
+          <img
+            src={tw}
+            alt=""
+            onClick={RedirectPage}
+            className="w-14 aspect-square"
+          />
+        </div>
       </div>
     </motion.div>
   );
