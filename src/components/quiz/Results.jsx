@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Backdrop from './Backdrop';
-import { AnimatePresence, motion } from 'framer-motion';
-import Confetti from 'react-confetti';
+import React, { useState } from "react";
+import Backdrop from "./Backdrop";
+import { AnimatePresence, motion } from "framer-motion";
+import Confetti from "react-confetti";
 function Results({ handleClick, results, quizLength, newQuiz }) {
   const [showConfetti, setShowConfetti] = useState(true);
   const good =
@@ -12,14 +12,14 @@ function Results({ handleClick, results, quizLength, newQuiz }) {
     results.score <= Math.floor(quizLength / 2);
   const dropIn = {
     hidden: {
-      y: '-10vh',
+      y: "-10vh",
       opacity: 0,
     },
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        type: 'spring',
+        type: "spring",
       },
     },
   };
@@ -34,7 +34,7 @@ function Results({ handleClick, results, quizLength, newQuiz }) {
         animate="visible"
         exit="hidden"
         onClick={(e) => e.stopPropagation()}
-        className="w-[30%] h-[50%] bg-white rounded-xl flex  flex-col overflow-hidden"
+        className="w-[50rem] h-[50%] bg-white rounded-xl flex m-[3rem] flex-col overflow-hidden"
       >
         <AnimatePresence>
           {showConfetti && (
@@ -57,12 +57,12 @@ function Results({ handleClick, results, quizLength, newQuiz }) {
         </AnimatePresence>
         <h1 className="text-4xl font-[Inter] font-semibold text-[#293264] m-5">
           {results.score >= 3 && results.score <= 5
-            ? 'Great!'
+            ? "Great!"
             : results.score > 5 && results.score <= 8
-            ? 'Well done!'
+            ? "Well done!"
             : results.score === quizLength
-            ? 'Excellent!'
-            : 'Shahaahaha!'}
+            ? "Excellent!"
+            : "Shahaahaha!"}
         </h1>
         <hr />
         <div className="h-full flex flex-col justify-center items-center">
