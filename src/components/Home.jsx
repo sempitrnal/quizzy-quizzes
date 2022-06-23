@@ -28,7 +28,7 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
       animate={{ y: 0, opacity: 1 }}
       exit={{ scale: 5, opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col justify-center items-center absolute bottom-[3rem] md:bottom-[6rem] lg:bottom-[15rem] overflow-hidden"
+      className="flex flex-col justify-center items-center min-h-screen bottom-[3rem] md:bottom-[6rem] lg:bottom-[15rem] overflow-hidden"
     >
       <p className="text-5xl text-[#293264] font-bold mb-10 font-[Inter] text-center">
         Bo's Quizzy Quizzes
