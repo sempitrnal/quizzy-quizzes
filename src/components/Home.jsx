@@ -28,9 +28,9 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
       animate={{ y: 0, opacity: 1 }}
       exit={{ scale: 5, opacity: 0 }}
       transition={{ duration: 0.8 }}
-      className="flex flex-col justify-center items-center absolute bottom-[15rem]"
+      className="flex flex-col justify-center items-center absolute bottom-[5rem] lg:bottom-[15rem] overflow-hidden"
     >
-      <p className="text-5xl text-[#293264] font-bold mb-10 font-[Inter]">
+      <p className="text-5xl text-[#293264] font-bold mb-10 font-[Inter] text-center">
         Bo's Quizzy Quizzes
       </p>
 
@@ -42,7 +42,7 @@ function Home({ startQuiz, quizDetails, setQuizDetails }) {
           startQuiz();
         }}
       >
-        <div className="flex items-end gap-5">
+        <div className="flex items-end gap-5 flex-col lg:flex-row">
           <div className="flex flex-col">
             <label htmlFor="category" className="mb-3">
               Category

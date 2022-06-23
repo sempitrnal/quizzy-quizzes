@@ -213,18 +213,18 @@ function Quiz({ quizDetails, back }) {
           transition={{ delay: 0.8 }}
         >
           <div className="">
-            <h1 className="text-lg text-[#bfc4dc] font-semibold font-[Inter]">
+            <h1 className="text-xs lg:text-lg text-[#bfc4dc] font-semibold font-[Inter]">
               Quiz Difficulty
             </h1>
-            <p className="text-4xl text-[#293264] font-bold font-[Inter] capitalize">
+            <p className="text-md lg:text-2xl text-[#293264] font-bold font-[Inter] capitalize">
               {quiz[0].difficulty}
             </p>
           </div>
           <div className="text-end">
-            <h1 className="text-lg text-[#bfc4dc] font-semibold font-[Inter]">
+            <h1 className="text-xs lg:text-lg text-[#bfc4dc] font-semibold font-[Inter]">
               Quiz Category
             </h1>
-            <p className="text-4xl text-[#293264] font-bold font-[Inter] ">
+            <p className="text-md lg:text-2xl text-[#293264] font-bold font-[Inter] ">
               {quiz[0].category}
             </p>
           </div>
